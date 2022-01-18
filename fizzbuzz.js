@@ -4,37 +4,47 @@ function isDivisibleBy(a, b) {
     return a % b === 0;
 }
 
-for( let i = 1; i <= 200; i++) {
-    let result = "";
+for( let i = 1; i <= 300; i++) {
+    let result = [];
     
     if(isDivisibleBy(i,3)) {
-        result += "Fizz";
+        result.push("Fizz");
     }
     if(isDivisibleBy(i,5)) {
-        result += "Buzz";
+        result.push("Buzz");
     }
     if(isDivisibleBy(i,7)) {
-        result += "Bang";
+        result.push("Bang");
     }
 
     if(isDivisibleBy(i,11)) {
-        result = "Bong";
+        result = ["Bong"];
     }
 
     if(isDivisibleBy(i,13)) {
-        result = result.replace('B', 'FezzB');
+        const indexB = result.findIndex(item => item[0] === "B");
+        result.splice(indexB, 0, "Fezz");
+
     }
 
-    if(result === "") {
-        result = i;
+    if(isDivisibleBy(i, 17)) {
+        result.reverse();
+
     }
 
+    if(result.length === 0) {
+        result.push(i.toString());
+    }
 
-
-    
-    console.log(result);
+    console.log(result.join(""));
 }
 
 
+// let exampleArr = ["Fizz", "Buzz", "Bong"];
+// const indexB = exampleArr.findIndex(item => item[0] === "B");
+// exampleArr.splice(indexB, 0, "Fezz");
+// console.log(exampleArr);
 
-// console.log(str.replace('B', 'FezzB'));
+
+
+
