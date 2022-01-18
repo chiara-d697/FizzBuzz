@@ -4,7 +4,7 @@ function isDivisibleBy(a, b) {
     return a % b === 0;
 }
 
-for( let i = 1; i <= 100; i++) {
+for( let i = 1; i <= 200; i++) {
     let result = "";
     
     if(isDivisibleBy(i,3)) {
